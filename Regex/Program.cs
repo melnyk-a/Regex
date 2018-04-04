@@ -1,15 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Regex
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            string str = "Some string";
+            RegEx regEx = new RegEx("[S.me string]");
+            bool isMatch = regEx.IsMatch(str);
+            Console.WriteLine(isMatch);
+
+            regEx.SetPattern("[sab]");
+            isMatch = regEx.IsMatch(str);
+            Console.WriteLine(isMatch);
+
+            regEx.SetPattern("[^abc]");
+            isMatch = regEx.IsMatch(str);
+            Console.WriteLine(isMatch);
+
+            regEx.SetPattern("S?me string");
+            isMatch = regEx.IsMatch(str);
+            Console.WriteLine(isMatch);
         }
     }
 }
