@@ -4,7 +4,7 @@ namespace Regex
 {
     internal class AnyOfChar : NonTerminalExp
     {
-        public AnyOfChar(List<IExpression> charSet) : base(charSet)
+        public AnyOfChar(List<IExpression> expressionsSet) : base(expressionsSet)
         {
         }
         public override bool IsMatch(Context context)
@@ -27,7 +27,15 @@ namespace Regex
                 }
                 else
                 {
-                    context.Advance(1);
+                    if (CanAdvance(context))
+                    {
+                        context.Advance(1);
+                    }
+                    else
+                    {
+                        isMatch = false;
+                        break;
+                    }
                 }
             }
             return isMatch;

@@ -4,21 +4,21 @@ namespace Regex
 {
     internal class ZeroOrOneChar : NonTerminalExp
     {
-        public ZeroOrOneChar(List<IExpression> charSet) : base(charSet)
+        public ZeroOrOneChar(List<IExpression> expressionsSet) : base(expressionsSet)
         {
         }
         public override bool IsMatch(Context context)
         {
-            int countOfMissMatch = 0;
-
-            foreach (var item in _charSet)
+            bool isMatch = false;
+            for (int i = 0; i < _expressionsSet.Count; ++i)
             {
-                if (item.IsMatch(context))
+                isMatch = _expressionsSet[i].IsMatch(context);
+                if (isMatch)
                 {
-                    countOfMissMatch++;
+                    break;
                 }
             }
-            return (countOfMissMatch == 1 || countOfMissMatch == 0);
+            return isMatch;
         }
     }
 }

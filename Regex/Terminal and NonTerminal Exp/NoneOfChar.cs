@@ -4,7 +4,7 @@ namespace Regex
 {
     internal class NoneOfChars : NonTerminalExp
     {
-        public NoneOfChars(List<IExpression> charSet) : base(charSet)
+        public NoneOfChars(List<IExpression> expressionsSet) : base(expressionsSet)
         {
         }
         public override bool IsMatch(Context context)
@@ -13,7 +13,7 @@ namespace Regex
 
             while (!context.IsLastPosition())
             {
-                foreach (var item in _charSet)
+                foreach (var item in _expressionsSet)
                 {
                     if (item.IsMatch(context))
                     {
@@ -27,7 +27,15 @@ namespace Regex
                 }
                 else
                 {
-                    context.Advance(1);
+                    if (CanAdvance(context))
+                    {
+                        context.Advance(1);
+                    }
+                    else
+                    {
+                        isMatch = true;
+                        break;
+                    }
                 }
             }
             return isMatch;
