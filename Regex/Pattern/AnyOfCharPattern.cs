@@ -12,7 +12,7 @@ namespace Regex
                 int startIndex = pattern.IndexOf('[');
                 int endIndex = pattern.IndexOf(']');
                 string charArray = pattern.Substring(startIndex, endIndex - startIndex);
-                _patternExpression = new AnyOfChars(SplitToTerminal(charArray));
+                _patternExpression = new AnyOfChar(SplitToTerminal(charArray));
             }
             else
             {

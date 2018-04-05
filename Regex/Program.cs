@@ -11,7 +11,7 @@ namespace Regex
             bool isMatch = regEx.IsMatch(str);
             Console.WriteLine(isMatch);
 
-            regEx.SetPattern("[sab]");
+            regEx.SetPattern("[ab]");
             isMatch = regEx.IsMatch(str);
             Console.WriteLine(isMatch);
 
