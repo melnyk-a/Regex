@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InputIncorrectPatternException.cs" />
-    <Compile Include="NonTerminalExp.cs" />
     <Compile Include="Pattern\AnyOfCharPattern.cs" />
     <Compile Include="Terminal and NonTerminal Exp\AnyOfChars.cs" />
     <Compile Include="Terminal and NonTerminal Exp\AnyOneChar.cs" />
