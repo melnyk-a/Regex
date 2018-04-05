@@ -1,4 +1,6 @@
-﻿namespace Regex
+﻿using System.Collections.Generic;
+
+namespace Regex
 {
     internal class RegEx
     {
@@ -29,15 +31,12 @@
         }
         private void SetChain()
         {
-            NoneOfCharsPattern none = new NoneOfCharsPattern();
-            AnyOfCharPattern any = new AnyOfCharPattern();
-            AnyOneCharPattern anyOne = new AnyOneCharPattern();
-            ZeroOrOnePattern zeroOrOne = new ZeroOrOnePattern();
-
-            _chain = none;
-            none.SetNext(any);
-            any.SetNext(anyOne);
-            anyOne.SetNext(zeroOrOne);
+            List<IPatternCreator> patternCreators = new List<IPatternCreator>(){new NoneOfCharPatternCreator(),
+                                                                                new AnyOfCharPatternCreator(),
+                                                                                new AnyOneCharPatternCreator(),
+                                                                                new ZeroOrOnePatternCreator() };
+            ChainCreator creator = new ChainCreator(patternCreators);
+            _chain = creator.Create();
         }
     }
 }
