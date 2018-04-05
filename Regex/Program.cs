@@ -7,7 +7,7 @@ namespace Regex
         static void Main()
         {
             string str = "Some string";
-            RegEx regEx = new RegEx("[S.me string]");
+            RegEx regEx = new RegEx("S.me string");
             bool isMatch = regEx.IsMatch(str);
             Console.WriteLine(isMatch);
 
