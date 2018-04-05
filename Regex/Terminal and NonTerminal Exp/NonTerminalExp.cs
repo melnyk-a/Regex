@@ -4,11 +4,15 @@ namespace Regex
 {
     internal abstract class NonTerminalExp : IExpression
     {
-        protected List<IExpression> _charSet;
-        public NonTerminalExp(List<IExpression> charSet)
+        protected List<IExpression> _expressionsSet;
+        public NonTerminalExp(List<IExpression> expressionsSet)
         {
-            _charSet = charSet;
+            _expressionsSet = expressionsSet;
         }
         public abstract bool IsMatch(Context context);
+        protected bool CanAdvance(Context context)
+        {
+            return !context.IsLastPosition();
+        }
     }
 }
