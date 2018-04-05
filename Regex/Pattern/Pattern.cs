@@ -10,7 +10,7 @@ namespace Regex
         {
             _next = next;
         }
-        protected List<IExpression> SplitToTerminal(string context)
+        protected virtual List<IExpression> SplitToTerminal(string context)
         {
             List<IExpression> expressions = new List<IExpression>();
             for (int i = 0; i < context.Length; ++i)

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Collections.Generic;
 
 namespace Regex
 {
@@ -16,6 +17,19 @@ namespace Regex
                 _patternExpression = _next.GetPattern(pattern);
             }
             return _patternExpression;
+        }
+        protected override List<IExpression> SplitToTerminal(string context)
+        {
+            List<IExpression> expressions = new List<IExpression>();
+
+            int indexOfQuestion = context.IndexOf('?');
+            string zeroMatchContext = context.Remove(indexOfQuestion, 1);
+            expressions.Add(new ZeroChar(base.SplitToTerminal(zeroMatchContext)));
+
+            string oneMatchContext = context.Replace('?', '.');
+            expressions.Add(new AnyOneChar(base.SplitToTerminal(zeroMatchContext)));
+
+            return expressions;
         }
     }
 }
