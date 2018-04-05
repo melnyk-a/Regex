@@ -4,14 +4,14 @@ namespace Regex
 {
     internal class NoneOfCharsPattern : Pattern
     {
-        private IExpression _patternExpression = null;
         public override IExpression GetPattern(string pattern)
         {
             if (pattern.Contains("[^") && pattern.Contains(']'))
             {
                 int startIndex = pattern.IndexOf("[^");
                 int endIndex = pattern.IndexOf(']');
-                string charArray = pattern.Substring(startIndex, endIndex - startIndex);
+                string charArray = pattern.Substring(startIndex,
+                                                    endIndex - startIndex);
                 _patternExpression = new NoneOfChars(SplitToTerminal(charArray));
             }
             else

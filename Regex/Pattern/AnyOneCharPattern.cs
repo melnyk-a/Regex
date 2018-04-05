@@ -4,7 +4,6 @@ namespace Regex
 {
     internal class AnyOneCharPattern : Pattern
     {
-        private IExpression _patternExpression = null;
         public override IExpression GetPattern(string pattern)
         {
             if (pattern.Contains('.'))

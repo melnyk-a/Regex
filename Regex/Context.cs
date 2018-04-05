@@ -4,10 +4,12 @@
     {
         string _context;
         int _currentPosition = 0;
+
         public Context(string context)
         {
             _context = context;
         }
+
         public void Advance(int index)
         {
             _currentPosition += index;

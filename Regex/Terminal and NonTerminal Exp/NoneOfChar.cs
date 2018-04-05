@@ -4,9 +4,11 @@ namespace Regex
 {
     internal class NoneOfChars : NonTerminalExp
     {
-        public NoneOfChars(List<IExpression> expressionsSet) : base(expressionsSet)
+        public NoneOfChars(List<IExpression> expressionsSet) :
+            base(expressionsSet)
         {
         }
+
         public override bool IsMatch(Context context)
         {
             bool isMatch = true;

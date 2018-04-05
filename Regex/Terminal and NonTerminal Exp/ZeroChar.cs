@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Regex
 {
@@ -11,6 +7,7 @@ namespace Regex
         public ZeroChar(List<IExpression> expressionsSet) : base(expressionsSet)
         {
         }
+
         public override bool IsMatch(Context context)
         {
             bool isMatch = true;

@@ -1,6 +1,6 @@
 ﻿namespace Regex
 {
-    interface IPatternCreator
+    internal interface IPatternCreator
     {
         Pattern Create();
     }

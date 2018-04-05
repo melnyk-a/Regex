@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Regex
 {
     internal class ChainCreator
     {
         private List<IPatternCreator> _list;
+
         public ChainCreator(List<IPatternCreator> creators)
         {
             _list = creators;
         }
+
         public Pattern Create()
         {
             Pattern firstChain = _list[0].Create();

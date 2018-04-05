@@ -4,9 +4,11 @@ namespace Regex
 {
     internal class ZeroOrOneChar : NonTerminalExp
     {
-        public ZeroOrOneChar(List<IExpression> expressionsSet) : base(expressionsSet)
+        public ZeroOrOneChar(List<IExpression> expressionsSet) :
+            base(expressionsSet)
         {
         }
+
         public override bool IsMatch(Context context)
         {
             bool isMatch = false;

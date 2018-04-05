@@ -6,11 +6,13 @@ namespace Regex
     {
         private IExpression _patternExpression;
         private Pattern _chain;
+
         public RegEx(string pattern)
         {
             SetChain();
             _patternExpression = ConvertToPatternExpression(pattern);
         }
+
         public bool IsMatch(string input)
         {
             return _patternExpression.IsMatch(new Context(input));
@@ -25,16 +27,21 @@ namespace Regex
             patternEnexpression = _chain.GetPattern(pattern);
             if (patternEnexpression == null)
             {
-                throw new InputIncorrectPatternException("Pattern expression not find");
+                string message = "Pattern expression not find";
+                throw new InputIncorrectPatternException(message);
             }
             return patternEnexpression;
         }
         private void SetChain()
         {
-            List<IPatternCreator> patternCreators = new List<IPatternCreator>(){new NoneOfCharPatternCreator(),
-                                                                                new AnyOfCharPatternCreator(),
-                                                                                new AnyOneCharPatternCreator(),
-                                                                                new ZeroOrOnePatternCreator() };
+            List<IPatternCreator> patternCreators = new List<IPatternCreator>
+            {
+                new NoneOfCharPatternCreator(),
+                new AnyOfCharPatternCreator(),
+                new AnyOneCharPatternCreator(),
+                new ZeroOrOnePatternCreator()
+            };
+
             ChainCreator creator = new ChainCreator(patternCreators);
             _chain = creator.Create();
         }

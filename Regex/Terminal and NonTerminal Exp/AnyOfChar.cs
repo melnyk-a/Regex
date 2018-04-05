@@ -7,6 +7,7 @@ namespace Regex
         public AnyOfChar(List<IExpression> expressionsSet) : base(expressionsSet)
         {
         }
+
         public override bool IsMatch(Context context)
         {
             bool isMatch = false;

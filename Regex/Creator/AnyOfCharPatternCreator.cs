@@ -4,7 +4,8 @@
     {
         public Pattern Create()
         {
-            return new AnyOfCharPattern();
+            {
+                return new AnyOfCharPattern();
+            }
         }
     }
-}

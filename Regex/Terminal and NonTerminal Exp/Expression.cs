@@ -1,7 +1,6 @@
-﻿
-namespace Regex
+﻿namespace Regex
 {
-    interface IExpression
+    internal interface IExpression
     {
         bool IsMatch(Context context);
     }

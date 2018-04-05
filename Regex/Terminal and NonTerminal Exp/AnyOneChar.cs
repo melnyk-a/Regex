@@ -7,6 +7,7 @@ namespace Regex
         public AnyOneChar(List<IExpression> expressionsSet) : base(expressionsSet)
         {
         }
+
         public override bool IsMatch(Context context)
         {
             int countOfMissMatch = 0;

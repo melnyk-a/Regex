@@ -5,6 +5,8 @@ namespace Regex
     internal abstract class Pattern
     {
         protected Pattern _next;
+        protected IExpression _patternExpression;
+
         public abstract IExpression GetPattern(string pattern);
         public void SetNext(Pattern next)
         {
