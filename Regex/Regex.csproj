@@ -42,7 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputIncorrectPatternException.cs" />
+    <Compile Include="Creator\AnyOfCharPatternCreator.cs" />
+    <Compile Include="Creator\AnyOneCharPatternCreator.cs" />
+    <Compile Include="Creator\IPatternCreator.cs" />
+    <Compile Include="Creator\NoneOfCharPatternCreator.cs" />
+    <Compile Include="Creator\ZeroOrOnePatternCreator.cs" />
+    <Compile Include="Exceptions\InputIncorrectPatternException.cs" />
     <Compile Include="Pattern\AnyOfCharPattern.cs" />
     <Compile Include="Terminal and NonTerminal Exp\AnyOfChars.cs" />
     <Compile Include="Terminal and NonTerminal Exp\AnyOneChar.cs" />
