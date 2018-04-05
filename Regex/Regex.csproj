@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChainCreator.cs" />
     <Compile Include="Creator\AnyOfCharPatternCreator.cs" />
     <Compile Include="Creator\AnyOneCharPatternCreator.cs" />
     <Compile Include="Creator\IPatternCreator.cs" />
