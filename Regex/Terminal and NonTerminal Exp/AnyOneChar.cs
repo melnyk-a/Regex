@@ -2,16 +2,16 @@
 
 namespace Regex
 {
-    internal class AnyOneChars : NonTerminalExp
+    internal class AnyOneChar : NonTerminalExp
     {
-        public AnyOneChars(List<IExpression> charSet) : base(charSet)
+        public AnyOneChar(List<IExpression> charSet) : base(charSet)
         {
         }
         public override bool IsMatch(Context context)
         {
             int countOfMissMatch = 0;
 
-            foreach (var item in _charSet)
+            foreach (var item in _expressionsSet)
             {
                 if (!item.IsMatch(context))
                 {

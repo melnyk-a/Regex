@@ -49,8 +49,9 @@
     <Compile Include="Creator\NoneOfCharPatternCreator.cs" />
     <Compile Include="Creator\ZeroOrOnePatternCreator.cs" />
     <Compile Include="Exceptions\InputIncorrectPatternException.cs" />
+    <Compile Include="NonTerminalExp.cs" />
     <Compile Include="Pattern\AnyOfCharPattern.cs" />
-    <Compile Include="Terminal and NonTerminal Exp\AnyOfChars.cs" />
+    <Compile Include="Terminal and NonTerminal Exp\AnyOfChar.cs" />
     <Compile Include="Terminal and NonTerminal Exp\AnyOneChar.cs" />
     <Compile Include="Pattern\AnyOneCharPattern.cs" />
     <Compile Include="Pattern\ZeroOrOnePattern.cs" />

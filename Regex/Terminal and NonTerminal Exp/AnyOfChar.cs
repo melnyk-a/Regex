@@ -2,9 +2,9 @@
 
 namespace Regex
 {
-    internal class AnyOfChars : NonTerminalExp
+    internal class AnyOfChar : NonTerminalExp
     {
-        public AnyOfChars(List<IExpression> charSet) : base(charSet)
+        public AnyOfChar(List<IExpression> charSet) : base(charSet)
         {
         }
         public override bool IsMatch(Context context)
@@ -13,7 +13,7 @@ namespace Regex
 
             while (!context.IsLastPosition())
             {
-                foreach (var item in _charSet)
+                foreach (var item in _expressionsSet)
                 {
                     if (item.IsMatch(context))
                     {
