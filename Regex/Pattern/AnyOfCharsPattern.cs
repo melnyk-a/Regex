@@ -2,7 +2,7 @@
 
 namespace Regex
 {
-    internal class AnyOfCharPattern : Pattern
+    internal class AnyOfCharsPattern : Pattern
     {
         public override IExpression GetPattern(string pattern)
         {
@@ -12,7 +12,7 @@ namespace Regex
                 int endIndex = pattern.IndexOf(']');
                 string charArray = pattern.Substring(startIndex+1,
                                                     endIndex - startIndex-1);
-                _patternExpression = new AnyOfChar(SplitToTerminal(charArray));
+                _patternExpression = new AnyOfChars(SplitToTerminal(charArray));
             }
             else
             {

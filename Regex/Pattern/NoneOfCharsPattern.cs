@@ -25,7 +25,7 @@ namespace Regex
             int endIndex = context.IndexOf(']');
             string charArray = context.Substring(startIndex + 2,
                                                 endIndex - startIndex - 2);
-            expressions.Add(new AnyOfChar(base.SplitToTerminal(charArray)));
+            expressions.Add(new AnyOfChars(base.SplitToTerminal(charArray)));
 
             return expressions;
         }

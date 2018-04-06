@@ -43,21 +43,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChainCreator.cs" />
-    <Compile Include="Creator\AnyOfCharPatternCreator.cs" />
+    <Compile Include="Creator\AnyOfCharsPatternCreator.cs" />
     <Compile Include="Creator\AnyOneCharPatternCreator.cs" />
     <Compile Include="Creator\IPatternCreator.cs" />
-    <Compile Include="Creator\NoneOfCharPatternCreator.cs" />
+    <Compile Include="Creator\NoneOfCharsPatternCreator.cs" />
     <Compile Include="Creator\ZeroOrOnePatternCreator.cs" />
     <Compile Include="Exceptions\InputIncorrectPatternException.cs" />
     <Compile Include="Terminal and NonTerminal Exp\NonTerminalExp.cs" />
-    <Compile Include="Pattern\AnyOfCharPattern.cs" />
-    <Compile Include="Terminal and NonTerminal Exp\AnyOfChar.cs" />
+    <Compile Include="Pattern\AnyOfCharsPattern.cs" />
+    <Compile Include="Terminal and NonTerminal Exp\AnyOfChars.cs" />
     <Compile Include="Terminal and NonTerminal Exp\AnyOneChar.cs" />
-    <Compile Include="Pattern\AnyOneCharPattern.cs" />
+    <Compile Include="Pattern\AnyOneCharsPattern.cs" />
     <Compile Include="Pattern\ZeroOrOnePattern.cs" />
     <Compile Include="Terminal and NonTerminal Exp\CharTerminal.cs" />
     <Compile Include="Context.cs" />
-    <Compile Include="Terminal and NonTerminal Exp\NoneOfChar.cs" />
+    <Compile Include="Terminal and NonTerminal Exp\NoneOfChars.cs" />
     <Compile Include="Pattern\NoneOfCharsPattern.cs" />
     <Compile Include="Pattern\Pattern.cs" />
     <Compile Include="Program.cs" />
@@ -65,7 +65,7 @@
     <Compile Include="Terminal and NonTerminal Exp\Expression.cs" />
     <Compile Include="RegEx.cs" />
     <Compile Include="Terminal and NonTerminal Exp\ZeroOrOneChar.cs" />
-    <Compile Include="Terminal and NonTerminal Exp\ZeroChar.cs" />
+    <Compile Include="Terminal and NonTerminal Exp\ZeroChars.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

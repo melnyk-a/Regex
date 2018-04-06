@@ -36,8 +36,8 @@ namespace Regex
         {
             List<IPatternCreator> patternCreators = new List<IPatternCreator>
             {
-                new NoneOfCharPatternCreator(),
-                new AnyOfCharPatternCreator(),
+                new NoneOfCharsPatternCreator(),
+                new AnyOfCharsPatternCreator(),
                 new AnyOneCharPatternCreator(),
                 new ZeroOrOnePatternCreator()
             };

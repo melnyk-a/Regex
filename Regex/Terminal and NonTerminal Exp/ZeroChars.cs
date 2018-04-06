@@ -2,9 +2,9 @@
 
 namespace Regex
 {
-    internal class ZeroChar : NonTerminalExp
+    internal class ZeroChars : NonTerminalExp
     {
-        public ZeroChar(List<IExpression> expressionsSet) : base(expressionsSet)
+        public ZeroChars(List<IExpression> expressionsSet) : base(expressionsSet)
         {
         }
 

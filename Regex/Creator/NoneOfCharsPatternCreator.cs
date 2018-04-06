@@ -1,6 +1,6 @@
 ﻿namespace Regex
 {
-    internal class NoneOfCharPatternCreator : IPatternCreator
+    internal class NoneOfCharsPatternCreator : IPatternCreator
     {
         public Pattern Create()
         {

@@ -2,9 +2,9 @@
 
 namespace Regex
 {
-    internal class AnyOfChar : NonTerminalExp
+    internal class AnyOfChars : NonTerminalExp
     {
-        public AnyOfChar(List<IExpression> expressionsSet) : base(expressionsSet)
+        public AnyOfChars(List<IExpression> expressionsSet) : base(expressionsSet)
         {
         }
 

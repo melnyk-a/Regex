@@ -1,11 +1,11 @@
 ﻿namespace Regex
 {
-    internal class AnyOfCharPatternCreator : IPatternCreator
+    internal class AnyOfCharsPatternCreator : IPatternCreator
     {
         public Pattern Create()
         {
             {
-                return new AnyOfCharPattern();
+                return new AnyOfCharsPattern();
             }
         }
     }

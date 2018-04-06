@@ -8,7 +8,7 @@ namespace Regex
         {
             if (pattern.Contains('.'))
             {
-                _patternExpression = new AnyOfChar(SplitToTerminal(pattern));
+                _patternExpression = new AnyOfChars(SplitToTerminal(pattern));
             }
             else
             {

@@ -23,7 +23,7 @@ namespace Regex
 
             int indexOfQuestion = context.IndexOf('?');
             string zeroMatchContext = context.Remove(indexOfQuestion, 1);
-            expressions.Add(new ZeroChar(base.SplitToTerminal(zeroMatchContext)));
+            expressions.Add(new ZeroChars(base.SplitToTerminal(zeroMatchContext)));
 
             string oneMatchContext = context.Replace('?', '.');
             expressions.Add(new AnyOneChar(base.SplitToTerminal(zeroMatchContext)));
