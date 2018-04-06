@@ -11,33 +11,14 @@ namespace Regex
 
         public override bool IsMatch(Context context)
         {
-            bool isMatch = true;
+            bool isMatch = false;
 
-            while (!context.IsLastPosition())
+            foreach (var item in _expressionsSet)
             {
-                foreach (var item in _expressionsSet)
-                {
-                    if (item.IsMatch(context))
-                    {
-                        isMatch = false;
-                        break;
-                    }
-                }
-                if (!isMatch)
+                isMatch = !item.IsMatch(context);
+                if(isMatch)
                 {
                     break;
-                }
-                else
-                {
-                    if (CanAdvance(context))
-                    {
-                        context.Advance(1);
-                    }
-                    else
-                    {
-                        isMatch = true;
-                        break;
-                    }
                 }
             }
             return isMatch;

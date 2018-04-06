@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Collections.Generic;
 
 namespace Regex
 {
@@ -8,17 +9,25 @@ namespace Regex
         {
             if (pattern.Contains("[^") && pattern.Contains(']'))
             {
-                int startIndex = pattern.IndexOf("[^");
-                int endIndex = pattern.IndexOf(']');
-                string charArray = pattern.Substring(startIndex,
-                                                    endIndex - startIndex);
-                _patternExpression = new NoneOfChars(SplitToTerminal(charArray));
+                _patternExpression = new NoneOfChars(SplitToTerminal(pattern));
             }
             else
             {
                 _patternExpression = _next.GetPattern(pattern);
             }
             return _patternExpression;
+        }
+        protected override List<IExpression> SplitToTerminal(string context)
+        {
+            List<IExpression> expressions = new List<IExpression>();
+
+            int startIndex = context.IndexOf("[^");
+            int endIndex = context.IndexOf(']');
+            string charArray = context.Substring(startIndex + 2,
+                                                endIndex - startIndex - 2);
+            expressions.Add(new AnyOfChar(base.SplitToTerminal(charArray)));
+
+            return expressions;
         }
     }
 }
